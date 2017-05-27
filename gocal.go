@@ -16,22 +16,22 @@ import (
 )
 
 var monthMap = map[string]int{
-	"Jan": 1,
-	"Feb": 2,
-	"Mar": 3,
-	"Apr": 4,
-	"May": 5,
-	"Jun": 6,
-	"Jul": 7,
-	"Aug": 8,
-	"Sep": 9,
-	"Oct": 10,
-	"Nov": 11,
-	"Dec": 12,
+	"jan": 1,
+	"feb": 2,
+	"mar": 3,
+	"apr": 4,
+	"may": 5,
+	"jun": 6,
+	"jul": 7,
+	"aug": 8,
+	"sep": 9,
+	"oct": 10,
+	"nov": 11,
+	"dec": 12,
 }
 var client *http.Client
 var availableCalendars map[string]string
-var usedCalendar string
+var usedCalendar = "primary"
 
 func main() {
 	shell := ishell.New()
@@ -131,5 +131,7 @@ func createEvent(args []string) {
 func buildDate(date string) string {
 	year := time.Now().Year()
 	pd := strings.Split(date, "-")
-	return fmt.Sprintf("%v-%v-%vT", year, monthMap[pd[0]], pd[1])
+	month := strings.ToLower(pd[0])
+	day := pd[1]
+	return fmt.Sprintf("%v-%v-%vT", year, monthMap[month], day)
 }

@@ -59,6 +59,8 @@ Which calendar to use?
 Use calendar:  Birthday
 ```
 
+If you omit this command, your primary calendar is going to be used.
+
 Create event:
 
 ```bash
