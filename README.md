@@ -1,6 +1,6 @@
 # GoCal
 
-I hate to create new B-Day events in Google Calendar. Every time I need to:
+I hate creating new B-Day events in my Google Calendar. Every time I need to:
 
 * choose the calendar (if it's not primary one)
 * enter the name
